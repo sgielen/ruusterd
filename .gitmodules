@@ -1,0 +1,3 @@
+[submodule "lib/libruuster-common"]
+	path = lib/libruuster-common
+	url = git://github.com/Wassasin/libruuster-common.git
