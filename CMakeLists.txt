@@ -14,9 +14,9 @@ add_definitions("-Wall -Wextra -Weffc++ -std=c++0x -pedantic -g3 -O3")
 # Set location of our FindFoo.cmake modules
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/modules")
 
-find_package(MysqlCppConn)
-target_link_libraries(ruusterd ${MYSQLCPPCONN_LIBRARIES})
-include_directories(${MYSQLCPPCONN_INCLUDE_DIRS})
+find_package(rusql REQUIRED)
+include_directories(${rusql_INCLUDE_DIRS})
+target_link_libraries(ruusterd ${rusql_LIBRARIES})
 
 find_package(Boost COMPONENTS system program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})

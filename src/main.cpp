@@ -1,8 +1,10 @@
 #include <iostream>
 
+#include "storage/storage.hpp"
+
 int main(int argc, char **argv)
 {
-	std::cout << "Hello World!" << std::endl;
+	ruuster::storage s("tcp://localhost:3306", "test", "test", "ruusternltrunk");
 
 	return 0;
 }
