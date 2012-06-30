@@ -11,8 +11,9 @@ add_executable(ruusterd
 
 add_definitions("-Wall -Wextra -Weffc++ -std=c++0x -pedantic -g3 -O3")
 
-# Set location of our FindFoo.cmake modules
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/modules")
+find_package(ruuster-common REQUIRED)
+include_directories(${ruuster-common_INCLUDE_DIRS})
+target_link_libraries(ruusterd ${ruuster-common_LIBRARIES})
 
 find_package(rusql REQUIRED)
 include_directories(${rusql_INCLUDE_DIRS})
